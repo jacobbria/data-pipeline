@@ -71,7 +71,7 @@ The first test will be getting product names into the DIM_PRODUCT table. Inside 
 
 <details>
   <summary>Design Choice: Why UNKNOWN</summary>
-  
+  There is a need for a fair way to evalulate the data and get as close to the truth as the data allows - garbage in, garbage out etc etc. By converting the problematic values into unknown we can still have a chance to see what our sales look like in general. 
 </details>
 
 </div>
