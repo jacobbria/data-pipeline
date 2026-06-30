@@ -9,6 +9,7 @@ Tools: Matillion, Snowflake, PowerBI
 
 Data Source: [Dirty Dataset to practice Data Cleaning](http://kaggle.com/datasets/amruthayenikonda/dirty-dataset-to-practice-data-cleaning)
 
+-------------------------------------
 
 ### Extract & Load - BRONZE
 We will be lading the .CSV file into an internal staging ground using Snowflake directly. This data will go into your **Bronze Database** which is where un-normalized and as-is data sits in the warehouse for storage. Specifically, each source of data will have its own schema and so the _Dirty Dataset_ will be placed in **BRONZE.DIRECT.UPLOAD** schema.
@@ -40,6 +41,8 @@ data or setting up a more continuous flow than scripting it/progammatically woul
 
 </div>
 
+---------------------------------------------
+
 ### Transformation A - SILVER
 With our data stored in **BRONZE** we now need to get it cleaned up and stored to be used in production. Our **SILVER** will be where the data lives for internal use. It needs to be accessible, system agnostic, and efficienlty stored for querying. The commonly used STAR SCHEMA will be put into place here. **Figure 4** belows whos how the this specific table will be stored.
 
@@ -52,9 +55,24 @@ With our data stored in **BRONZE** we now need to get it cleaned up and stored t
   The STAR schema is simple to understand and quick to implement. In comparison to normalized/3NF schemas (something often taught and used by myself in college) they rely less on joins and are less taxing on computations.
 </details>
 
+</div>
+
 The raw data also contains information that will demands specific design choices to address. In **Figrure 2** you can see the dataset contains ERRORS, NULLS, or other input which could break our tables, analysis, or converting the data into specific data types. 
 
+The first test will be getting product names into the DIM_PRODUCT table. Inside of Matillion, I selected a Calculator, Distinct, and Output table component to transform the data. The goal was conolidate all distinct possible products and any errors or unknowns to be pushed into a catch-all category: "UNKNOWN". 
 
+<div align="center">
+  
+### Figure 5: Matillion Flow
+<img width="578" height="150" alt="image" src="https://github.com/user-attachments/assets/1465f84f-82e1-4859-9ef9-1ea474dc0c30" />
+
+### Figure 6: Snowflake Results
+<img width="859" height="485" alt="image" src="https://github.com/user-attachments/assets/01bf1f30-87a4-488a-a22c-d4256e636c75" />
+
+<details>
+  <summary>Design Choice: Why UNKNOWN</summary>
+  
+</details>
 
 </div>
 
