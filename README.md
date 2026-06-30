@@ -25,3 +25,11 @@ We will be lading the .CSV file into an internal staging ground using Snowflake 
 </div>
 
 
+
+
+
+
+<img width="1598" height="846" alt="image" src="https://github.com/user-attachments/assets/b5f0c6fe-f177-484d-a89e-38b7aa5e6301" />
+
+
+
