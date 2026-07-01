@@ -79,6 +79,23 @@ The first test will be getting product names into the DIM_PRODUCT table. Inside 
   <summary>Design Choice: Why UNKNOWN</summary>
   There is a need for a fair way to evalulate the data and get as close to the truth as the data allows - garbage in, garbage out etc etc. By converting the problematic values into unknown we can still have a chance to see what our sales look like in general. 
 </details>
+</div>
+
+The goal is to have a 1-to-1 Matillion-to-Table pipeline. By siloing the data flow we have several practical benefits including 
+
+<ul>
+  <li>Ensure if one job fails they dont all fail </li>
+  <li>Better performance as different jobs will require different resources and time to complete </li>
+  <li> Version Control - ensure if we need to recovery our snapshot we wont lose as much data as with a monolith job</li>
+</ul>
+
+After creating the first two pipelines I decided to try and give Maia, Matillions AI, a shot. This really should be the ideal use case for generate AI, or automation in general, as its a series of simple steps, has reference data to examine, and known/specific output. It performed exacty as intended and the end job was successful. 
+
+<div align="center">
+  
+### Figure 7: Matillion Prompt Integration
+<img width="1265" height="988" alt="image" src="https://github.com/user-attachments/assets/ccb54fc3-a72a-42ed-83b4-52d24be46479" />
+
 
 </div>
 
