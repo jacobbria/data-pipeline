@@ -9,6 +9,12 @@ Tools: Matillion, Snowflake, PowerBI
 
 Data Source: [Dirty Dataset to practice Data Cleaning](http://kaggle.com/datasets/amruthayenikonda/dirty-dataset-to-practice-data-cleaning)
 
+<div align="center">
+
+  ### Figure 1: Pipeline
+<img width="843" height="262" alt="image" src="https://github.com/user-attachments/assets/e242c204-de80-4048-a199-b935f2a2bf6b" />
+</div>
+
 -------------------------------------
 
 ### Extract & Load - BRONZE
@@ -17,10 +23,10 @@ We will be lading the .CSV file into an internal staging ground using Snowflake 
 
 <div align="center">
   
-### Figure 1: Database/Schema Creation
+### Figure 2: Database/Schema Creation
 <img width="591" height="248" alt="image" src="https://github.com/user-attachments/assets/f3247662-489d-477c-a250-552fb432486f" />
 
-### Figure 2: Stage (Internal) Creation
+### Figure 3: Stage (Internal) Creation
 <img width="664" height="200" alt="image" src="https://github.com/user-attachments/assets/4bf54d43-f27d-4422-bb2a-19b11ca5c014" />
 
 </div>
@@ -31,7 +37,7 @@ data or setting up a more continuous flow than scripting it/progammatically woul
 
 <div align="center">
   
-### Figure 3: Messy Data Table
+### Figure 4: Messy Data Table
 <img width="1178" height="715" alt="image" src="https://github.com/user-attachments/assets/0effa717-20b6-43cc-91c5-29cb09c34076" />
 
 <details>
@@ -48,7 +54,7 @@ With our data stored in **BRONZE** we now need to get it cleaned up and stored t
 
 <div align="center">
 
-  ### Figure 4: Silver ERP 
+  ### Figure 5: Silver ERP 
 <img width="597" height="556" alt="image" src="https://github.com/user-attachments/assets/add4728e-5db0-4bb9-93eb-be453373e185" />
 <details>
   <summary>Design Choice: Why STAR?</summary>
@@ -63,10 +69,10 @@ The first test will be getting product names into the DIM_PRODUCT table. Inside 
 
 <div align="center">
   
-### Figure 5: Matillion Flow
+### Figure 6: Matillion Flow
 <img width="578" height="150" alt="image" src="https://github.com/user-attachments/assets/1465f84f-82e1-4859-9ef9-1ea474dc0c30" />
 
-### Figure 6: Snowflake Results
+### Figure 7: Snowflake Results
 <img width="859" height="485" alt="image" src="https://github.com/user-attachments/assets/01bf1f30-87a4-488a-a22c-d4256e636c75" />
 
 <details>
